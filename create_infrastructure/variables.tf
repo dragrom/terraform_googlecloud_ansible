@@ -1,6 +1,5 @@
 variable google_credentials {
     description = "Google account file will be provides privat"
-    default     = "/mnt/d/account.json"
 }
 
 variable vpc_name {
