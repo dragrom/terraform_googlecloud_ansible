@@ -1,0 +1,9 @@
+variable name {}
+variable container_numbers {}
+variable os_image {}
+variable host {}
+variable username {}
+variable password {}
+variable cluster_ca_certificate {}
+variable client_certificate {}
+variable client_key {}
