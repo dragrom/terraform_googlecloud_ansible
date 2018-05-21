@@ -41,3 +41,13 @@ At the time ansible-container support for three engines:
     openshift RedHat Openshift
     
     <br />
+
+**How to use ansible-container**
+
+  - mkdir ansible-project;cd ansible-project
+  - ansible-container init #initialize the ansible container project. This automaticaly create container.yaml,meta.yaml and requirements.yaml files
+  - ansible-container build #build the project
+  - ansible-container run
+  - docker login; ansible-container push # push the image to the repository
+  - ansible-container shipit kube --save-config # It will create the Kubernetes artifacts to deploy it on Kubernetes.
+  - kubectl create -f terraform_googlecloud_ansible/ansible/shipit_config/kubernetes/ # Run the Kubernetes Artifacts
