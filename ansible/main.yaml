@@ -1,0 +1,25 @@
+- hosts: wordpress
+  vars:
+    - wp_mysql_db: wordpress
+    - wp_mysql_user: wordpress
+    - wp_mysql_password: password
+  tasks:
+    - name: Update the system with required packages
+      shell: yum -y update && \
+             yum clean all && \
+             yum -y install epel-release && \
+             yum clean all
+
+    - name: Install packages
+      yum:
+        name: "{{ item }}"
+        state: latest 
+      with_items:
+        - httpd
+        - php
+        - php-mysql
+        - php-gd
+
+
+    - name: Update inde.html file
+      shell: cat /etc/hostname >> /var/www/html/index.html
