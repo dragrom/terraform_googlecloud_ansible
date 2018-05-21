@@ -1,8 +1,4 @@
-- hosts: wordpress
-  vars:
-    - wp_mysql_db: wordpress
-    - wp_mysql_user: wordpress
-    - wp_mysql_password: password
+- hosts: web
   tasks:
     - name: Update the system with required packages
       shell: yum -y update && \
@@ -17,9 +13,6 @@
       with_items:
         - httpd
         - php
-        - php-mysql
-        - php-gd
-
 
     - name: Update inde.html file
       shell: cat /etc/hostname >> /var/www/html/index.html
