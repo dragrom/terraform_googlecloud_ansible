@@ -34,6 +34,6 @@ module "3_kubernetes_containers" {
   client_key             = "${module.2_kubernetes_cluster.client_key}"
 
   name              = "my-project-containers"
-  container_numbers = 1
-  os_image          = "ubuntu:16"
+  container_numbers = 2
+  os_image          = "nginx:1.7.8"
 }

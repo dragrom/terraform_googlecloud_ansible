@@ -16,7 +16,3 @@ output "client_certificate" {
   description = "Public certificate used by clients to authenticate to the cluster endpoint"
   value       = "${base64decode(google_container_cluster.kubernetes.master_auth.0.client_certificate)}"
 }
-
-output "created" {
-  value = "true"
-}
